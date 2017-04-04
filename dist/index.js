@@ -22,7 +22,7 @@ const dbg = (0, _debug2.default)('metalsmith-http-run');
 let params;
 function listen(..._params) {
   params = _params;
-  _http2.default.createServer(_handler).listen(3030, () => dbg('listening on 3030'));
+  _http2.default.createServer(_handler).listen(process.env.PORT || 3030, () => dbg('listening on 3030'));
 }
 function _handler(request, response) {
   if (request.url !== '/build') return;
